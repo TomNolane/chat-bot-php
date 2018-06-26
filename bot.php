@@ -1,4 +1,5 @@
 <?php
+/* init */
 mb_internal_encoding("UTF-8");
 list(, $char_a) = unpack('N', mb_convert_encoding("а", 'UCS-4BE', 'UTF-8'));
 list(, $char_b) = unpack('N', mb_convert_encoding("б", 'UCS-4BE', 'UTF-8'));
@@ -89,22 +90,36 @@ $array = array(
     $char_8 => "42",
     $char_9 => "43"
 );
+/* end init */
 
+/* which phrases database */
 $s = array("мне нужно займ","мне нужен займ","мне нужен заим","жене нужно займ","хотел бы найти займ","загрузить документы","хочу найти займ"); 
+
+/* the phrase that chat bot received (for example, POST request) */
 $s2 = array("хотел бы получить займ"); 
 
+/* convert all phrases to INT, example 0.191232127312312 */
 $f = GetIntLenght($s,$array);  
 $f2 = GetIntLenght($s2,$array); 
+/* end convert all phrases to INT, example 0.191232127312312 */
 
+/* comparing our phrases database ($f) and request ($f2) */
 $f3 = CompareWords($f,$f2);  
 
+/* Show results: */
 $temp = 0;
 foreach($f3 as $each)
 {
     echo $s[$temp]. ' - '. $s2[0]. ' : '. $each."%\n"; $temp++;
 }
+/* The end */
 
+///////////////////////////////////////////////////////////////////////////////////
+/* 
 
+function section, not intresting
+
+*/
 function CompareWords($f, $f2)
 {
     $temp = GetPairs($f);
@@ -228,3 +243,4 @@ function GetIntLenght($s,$array)
      
     return $temp;
 }
+/* end function section */
