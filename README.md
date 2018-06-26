@@ -6,7 +6,7 @@ Convet all words ($s) to big integer [from 0 to 1] and and comparing with $s2 as
 
 Just copy bot.php and open in LAMP/XDebug/Web Page
 
-##It's show  next results:
+## It's show  next results:
 
 мне нужно займ - хотел бы получить займ : 41%  
 мне нужен займ - хотел бы получить займ : 41%  
@@ -16,12 +16,12 @@ Just copy bot.php and open in LAMP/XDebug/Web Page
 загрузить документы - хотел бы получить займ : 27%  
 хочу найти займ - хотел бы получить займ : 53%  
   
-###Out mini phrases database:
+### Out mini phrases database:
 ```php 
 array("мне нужно займ","мне нужен займ","мне нужен заим","жене нужно займ","хотел бы найти займ","загрузить документы","хочу найти займ");  
 ```  
 
-###Incoming request:
+### Incoming request:
 ```php 
 array("хотел бы получить займ"); 
 ```
